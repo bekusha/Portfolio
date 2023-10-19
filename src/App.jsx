@@ -1,15 +1,18 @@
-import { useState } from 'react';
 import Layout from './components/Layout';
 import './App.scss';
 import { Routes, Route } from 'react-router-dom';
-
+import Home from './components/Home/';
 function App() {
-  const [count, setCount] = useState(0);
-
   return (
     <>
       <Routes>
-        <Route path="/" element={<Layout />} />
+        <Route path="/" element={<Layout />}>
+          <Route index element={<Home />} />
+          {/* <Route path="about" element={<About />} />
+          <Route path="/contact" element={<Contact />} />
+          <Route path="/portfolio" element={<Portfolio />} />
+          <Route path="/dashboard" element={<Dashboard />} /> */}
+        </Route>
       </Routes>
     </>
   );
